@@ -14,29 +14,29 @@ Bravo周刊源码托管在github上，同时结合github的gh-pages能力和hexo
 [Node.js install](https://nodejs.org/download/)
 ## 安装hexo
 ``` { .theme-peacock }
-$ npm install hexo-cli -g
+npm install hexo-cli -g
 ```
  
 ## 新建文章
 - 拉取代码
 ``` { .theme-peacock }
-$ git clone https://github.com/tbbravo/tbbravo.github.io.git
+git clone https://github.com/tbbravo/tbbravo.github.io.git
 # 克隆tbbravo.github.io到本地
-$ git branch
+git branch
 # 查看所有分支
-$ git checkout source
+git checkout source
 # tbbravo.github.io有master和source两个分支，source分支用于存放hexo源码，master用于存放由hexo生成的public中的发布到页面中的代码。注：所有修改都应在在source分支下进行，master分支只用于存放source生成的发布代码！
-$ cd tbbravo.github.io
+cd tbbravo.github.io
 # 进入tbbravo.github.io目录
 ```
 
 - 初始化hexo配置
 ``` { .theme-peacock }
-$ hexo init
+hexo init
 
 #安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。
-$ hexo init
-$ npm install
+hexo init
+npm install
 
 #新建完成后，指定文件夹的目录如下
 .
@@ -52,19 +52,19 @@ $ npm install
 
 - 新建一篇文章
 ``` { .theme-peacock }
-$ hexo n 'article1' 
+hexo n 'article1' 
 # hexo new 的简写
 # 执行完后，将会在tbbravo.github.io/source/_posts目录下生成article1.md
 ```
 
 - 编辑文章内容
 ``` { .theme-peacock }
-$ vi tbbravo.github.io/source/_posts/article1.md
+vi tbbravo.github.io/source/_posts/article1.md
 ```
 
 - 编译生成html
 ``` { .theme-peacock }
-$ hexo g
+hexo g
 # hexo generate 的简写
 # 执行完后，将生成public目录，内容是根据hexo的theme和article1.md生成的html等文件
 ```
@@ -72,17 +72,17 @@ $ hexo g
 ## 发布文章
 - 拷贝public文件
 ``` { .theme-peacock }
-$ git clone --depth 1 --branch master --single-branch . || (git init && git remote add -t master origin )
-$ rm -rf ./*
-$ cp -r ../public/* .
+git clone --depth 1 --branch master --single-branch . || (git init && git remote add -t master origin )
+rm -rf ./*
+cp -r ../public/* .
 # 将source分支下生成的public下的所有内容copy到master根目录下
 ```
 
 - 提交master目录
 ``` { .theme-peacock }
-$ git commit -m 'your comment'
+git commit -m 'your comment'
 # 提交修改
-$ git push
+git push
 # 发布到master分支
 ```
 
@@ -91,15 +91,15 @@ $ git push
 ## 提交source分支代码
 完成新文章的投稿后，需要提交原来在source分支下用markdown编写的内容
 ``` { .theme-peacock }
-$ git branch
+git branch
 # 查看自己当前在哪个繁殖下
-$ git checkout source
+git checkout source
 # 切换到source分支下
-$ git add -A
+git add -A
 # 添加所有新增内容
-$ git commit -m 'your comment'
+git commit -m 'your comment'
 # 提交修改
-$ git push origin source
+git push origin source
 # 发布到source分支
 ```
 
